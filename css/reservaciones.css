@@ -1,0 +1,52 @@
+.contenedor-reserva {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 30px;
+  gap: 40px;
+  justify-content: center;
+}
+
+.info-habitacion, .formulario-reserva {
+  background: #ffffff;
+  color: black;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  max-width: 450px;
+  width: 100%;
+}
+
+.info-habitacion img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.formulario-reserva form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.formulario-reserva input,
+.formulario-reserva button {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.formulario-reserva button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.formulario-reserva button:hover {
+  background-color: #0056b3;
+}
+
+#galeria-fotos {
+  transition: all .3s ease-in-out;
+}

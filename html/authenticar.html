@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Hotel</title>
+  <link rel="stylesheet" href="../css/authenticar.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="form-container">
+    <h1 class="form-title">Bienvenido a Celestial Dreams</h1>
+
+    <!-- Botones sociales -->
+    <div class="social-login">
+      <button id="btn-google" class="btn-social google">Google</button>
+      <button id="btn-github" class="btn-social github">GitHub</button>
+    </div>
+
+    <!-- FORMULARIO DE LOGIN -->
+    <div id="login-section" class="form-block">
+      <h2>Iniciar Sesión</h2>
+      <form id="login-form">
+        <input type="email" id="login-email" placeholder="Correo" required>
+        <input type="password" id="login-password" placeholder="Contraseña" required>
+        <button type="submit" class="btn-submit">Entrar</button>
+      </form>
+      <p class="toggle-text">¿No tienes una cuenta? <a href="#" id="toggle-register">Crear cuenta</a></p>
+    </div>
+
+    <!-- FORMULARIO DE REGISTRO (oculto por defecto) -->
+    <div id="register-section" class="form-block" style="display: none;">
+      <h2>Registrar nueva cuenta</h2>
+      <form id="register-form">
+        <input type="text" id="register-name" placeholder="Nombre completo" required>
+        <input type="email" id="register-email" placeholder="Correo" required>
+        <input type="password" id="register-password" placeholder="Contraseña" required>
+        <button type="submit" class="btn-submit">Registrarse</button>
+      </form>
+      <p class="toggle-text">¿Ya tienes una cuenta? <a href="#" id="toggle-login">Iniciar sesión</a></p>
+    </div>
+  </div>
+
+  <script type="module" src="../js/authenticar.js"></script>
+
+  <!-- JS para alternar formularios -->
+  <script>
+    document.getElementById('toggle-register').addEventListener('click', function (e) {
+      e.preventDefault();
+      document.getElementById('login-section').style.display = 'none';
+      document.getElementById('register-section').style.display = 'block';
+    });
+
+    document.getElementById('toggle-login').addEventListener('click', function (e) {
+      e.preventDefault();
+      document.getElementById('register-section').style.display = 'none';
+      document.getElementById('login-section').style.display = 'block';
+    });
+  </script>
+</body>
+</html>

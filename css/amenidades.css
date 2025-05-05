@@ -1,0 +1,66 @@
+.seccion-amenidades {
+  padding: 60px 20px;
+  background-color: #fff;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.contenedor-titulo .subtitulo {
+  letter-spacing: 3px;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.contenedor-titulo .titulo {
+  font-size: 36px;
+  font-weight: 900;
+  margin-bottom: 40px;
+  color: black;
+}
+
+.contenedor-titulo .titulo h2 {
+  letter-spacing: 20px;
+}
+
+.contenedor-amenidades {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tarjeta-amenidad {
+  border: 1px solid #ff005552;
+  padding: 30px;
+  border-radius: 10px;
+  transition: box-shadow 0.3s;
+  text-align: left;
+}
+
+.tarjeta-amenidad:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+.tarjeta-amenidad h2 {
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  color: #ff0055;
+}
+
+.tarjeta-amenidad h3 {
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  color: black;
+  padding: .8em;
+}
+
+.tarjeta-amenidad p {
+  color: #555;
+  font-size: 15px;
+  line-height: 1.6;
+}

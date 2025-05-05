@@ -1,0 +1,136 @@
+
+/* Sección de Habitaciones */
+#habitaciones {
+  padding: 80px 20px;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+#habitaciones h2 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+#habitaciones .subtitulo {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 3rem;
+}
+
+.habitacion-card {
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.habitacion-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.habitacion-card img {
+  border-radius: 10px 10px 0 0;
+  height: 240px;
+  object-fit: cover;
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.habitacion-card:hover img {
+  transform: scale(1.05);
+}
+
+.habitacion-card .card-body {
+  padding: 1rem;
+  background-color: #fff;
+  display: flex;
+}
+
+.habitacion-card .card-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 0;
+  color: #333;
+}
+
+/* Overlay para descripción y botón */
+.habitacion-card .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.habitacion-card:hover .overlay {
+  opacity: 1;
+}
+
+.habitacion-card .overlay p {
+  margin: 0;
+  font-size: 1rem;
+  color: #f1f1f1;
+}
+
+.habitacion-card .ver-fotos-btn {
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+}
+
+.habitacion-card .ver-fotos-btn:hover {
+  background-color: #222;
+  color: #fff;
+}
+
+.habitacion-card .card-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #ddd;
+  padding-top: .8rem;
+  margin-top: .9em;
+}
+
+.card-costo {
+  background-color: #e8f0ff;
+  color: #0d6efd;
+  padding: .5em .8em;
+  border-radius: 10px;
+  font-weight: bold;
+}
+
+
+/* Modal (puedes personalizar más si deseas) */
+#modalHabitacion .modal-header {
+  background-color: #003366;
+  color: #fff;
+  border-bottom: none;
+}
+
+#modalHabitacion .modal-footer {
+  border-top: none;
+}
+
+#modalHabitacion .btn-primary {
+  border-radius: 25px;
+  padding: 10px 30px;
+}
+
+

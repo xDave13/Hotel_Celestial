@@ -1,0 +1,147 @@
+/* NAVBAR PRINCIPAL */
+.encabezado {
+  background-color: transparent;
+  color: #fff;
+  font-size: 1.2rem;
+  padding: .6em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  margin: auto;
+  z-index: 1000;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  gap: 15em;
+}
+
+.encabezado.scrolled {
+  background-color: #ffffff;
+  color: #000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.encabezado h1 {
+  color: #ff0055;
+  font-size: 3rem;
+}
+
+/* ENLACES DE NAVEGACIÓN */
+.navbar .nav-link {
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.encabezado.scrolled .nav-link {
+  color: #000;
+}
+
+.encabezado nav ul {
+  list-style: none;
+  margin: auto;
+  display: flex;
+  gap: 30px;
+  margin: .7em;
+  justify-content: center;
+}
+
+.encabezado nav a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.encabezado.scrolled nav a {
+  color: #000000;
+}
+
+.encabezado nav a:hover {
+  color: #ff0055;
+  transition: all .3s ease-in-out;
+  font-size: 1.3rem;
+}
+
+/* BOTÓN RESERVAR */
+.boton-reservar {
+  font-weight: bold;
+  background-color: #ff0055;
+  padding: 10px 15px;
+  border-radius: 5px;
+  color: white !important;
+}
+
+.boton-reservar:hover {
+  background: #000000;
+  color: #e91e63;
+  transition: all .3s ease-in-out;
+}
+
+/* MENÚ DROPDOWN DE USUARIO */
+/* Dropdown personalizado */
+/* Dropdown personalizado */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  color: white;
+  padding: 10px 15px;
+  background-color: #000;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dropbtn:hover {
+  background-color: #111;
+}
+
+/* Flechita */
+.arrow {
+  font-size: 0.8em;
+  margin-left: 6px;
+  transition: transform 0.3s ease;
+}
+
+/* Girar flecha cuando se muestra el menú */
+.dropdown:hover .arrow {
+  transform: rotate(180deg);
+}
+
+/* Menú desplegable */
+.dropdown-content {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  position: absolute;
+  right: 0;
+  background-color: #000000;
+  min-width: 200px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.dropdown-content a {
+  color: #000;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border-radius: 8px;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+  color: #e91e63;
+}
+
+/* Mostrar el menú con animación */
+.dropdown:hover .dropdown-content {
+  opacity: 1;
+  visibility: visible;
+}

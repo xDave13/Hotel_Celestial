@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Hotel Ejemplo</title>
+  
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- Bootstrap desde CDN (único y correcto) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  
+    <!-- Tus hojas de estilo personalizadas -->
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/presentacion.css">
+    <link rel="stylesheet" href="../css/habitaciones.css">
+    <link rel="stylesheet" href="../css/servicios.css">
+    <link rel="stylesheet" href="../css/amenidades.css">
+    <link rel="stylesheet" href="../css/formReservacion.css">
+    <!--<link rel="stylesheet" href="../css/reservaciones.css">-->
+    <link rel="stylesheet" href="../css/footer.css">
+  </head>
+  
+
+<body>
+
+  <header class="encabezado fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-light container">
+      <a class="navbar-brand" href="#">
+        <img src="../img/logo-blanco.png" alt="logo" id="logo" class="navbar-logo" width="100" height="100">
+      </a>
+  
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <ul class="navbar-nav mb-2 mb-lg-0 align-items-lg-center text-center gap-2">
+  
+          <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#habitaciones">Habitaciones</a></li>
+          <li class="nav-item"><a class="nav-link" href="#servicios">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="#amenidades">Amenidades</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+          <li class="nav-item"><a class="nav-link boton-reservar" href="#reservar">Reservar</a></li>
+  
+          <!-- Botón de Login -->
+          <!-- Login visible si no hay sesión -->
+          <li class="nav-item" id="nav-login">
+            <a href="../html/authenticar.html" class="dropbtn btn-dark px-4 py-2 text-white">Iniciar sesión</a>
+          </li>
+
+          <!-- Menú desplegable visible solo si hay sesión -->
+          <li id="nav-usuario" class="dropdown" style="display: none;">
+            <a href="#" class="dropbtn btn btn-dark rounded-pill px-4 py-2" id="user-name">
+              Usuario <span class="arrow">▼</span>
+            </a>            
+            <div class="dropdown-content">
+              <a href="../html/reservEchas.html" id="historial-reservaciones">Consultar reservaciones</a>
+              <a href="#" id="cerrar-sesion" class="dropbtn btn btn-dark rounded-pill px-4 py-2">Cerrar sesión</a>
+            </div>
+          </li>
+
+          <!-- Botón de administración (ocúltalo si no es admin) -->
+          <li class="nav-item">
+            <a class="nav-link boton-login" id="btn-admin" href="../html/admin.html">Administración</a>
+          </li>
+  
+        </ul>
+      </div>
+    </nav>
+  </header>
+  
+  
+
+
+  <!--Barra de presentacion y carrusel de imagenes-->
+  <section id="inicio" class="hero container-fluid">
+    <div class="background-carousel">
+      <div class="slide" style="background-image: url('../img/habitaciones/hDeluxe/1.png');"></div>
+      <div class="slide" style="background-image: url('../img/habitaciones/hEstandar/2.png');"></div>
+      <div class="slide" style="background-image: url('../img/habitaciones/hPresidencial/1.png');"></div>
+      <div class="slide" style="background-image: url('../img/habitaciones/hSuiteFam/2.png');"></div>
+      <div class="slide" style="background-image: url('../img/habitaciones/hVilla/2.png');"></div>
+      <div class="slide" style="background-image: url('../img/habitaciones/hPresidencial/3.png');"></div>
+      <div class="slide" style="background-image: url('../img/habitaciones/hVilla/4.png');"></div>
+    </div>
+       
+
+    <div class="container-fluid">
+      <div class="contenedor">
+        <h2>Vive una experiencia inolvidable fuera de lo comun.</h2>
+        <p>Disfruta de nuestras habitaciones y servicios de primera clase.</p>
+        <!--<a href="#reservar" class="boton">Haz tu reserva</a>-->
+      </div>
+    </div>    
+  </section>
+
+
+  <!--Disfruta una experiencia-->
+  <section id="presentacion">
+    <div class="contPadre">
+      <div class="presenInfo">
+        <img src="../img/estrellas.png" alt="estrellas" width="100">
+        <h4 class="pt-2 pb-3">Hotel villas</h4>
+        <h2>Disfruta una experiencia inolvidable</h2>
+        <p>Disfruta de una gran experiencia en cualquiera de nuestra habitaciones, 
+          siempre pensando en tu comodidad.</p>
+      </div>
+  
+      <div class="presenImagenes">
+        <img src="../img/hotel3.jpg" class="img-fluid" id="imgPresen1" alt="habitacion1" width="350" height="350">
+      </div>
+    </div>    
+  </section>
+
+
+  <!--Catalogo de habitaciones-->
+  <section id="habitaciones" class="habitaciones">
+    <h2>Habitaciones & Suites</h2>
+    <p class="subtitulo">Renueva tus sentidos</p>
+  
+    <div class="row g-4">
+  
+      <!-- Card 1 -->
+      <div class="col-md-4 mb-4">
+        <div class="card habitacion-card position-relative">
+          <img src="../img/habitaciones/hEstandar/1.png" class="card-img-top" alt="Habitación Estandar">
+          <div class="card-body">
+            <h5 class="card-title">Habitación Estándar</h5>
+            <h5 class="card-costo">$700.00</h5>
+          </div>        
+          
+          <div class="overlay text-center text-white px3">
+            <button class="btn btn-light ver-fotos-btn" data-habitacion="estandar">Ver fotos</button>
+            <p class="card-text">Espacio amplio con cama king size, minibar y balcón privado.</p>
+          </div>
+        </div>
+      </div>  
+
+      <!-- Card 2 -->
+      <div class="col-md-4 mb-4">
+        <div class="card habitacion-card position-relative">
+          <img src="../img/habitaciones/hDeluxe/1.png" class="card-img-top" alt="Habitación Deluxe">
+          <div class="card-body">
+            <h5 class="card-title">Habitación Deluxe</h5>
+            <h5 class="card-costo">$950.00</h5>
+          </div> 
+
+          <div class="overlay text-center text-white px3">
+            <button class="btn btn-light ver-fotos-btn" data-habitacion="deluxe">Ver fotos</button>
+            <p class="card-text">Espacio amplio con cama king size, minibar y balcón privado.</p>
+          </div>
+        </div>
+      </div>  
+
+      <!-- Card 3 -->
+      <div class="col-md-4 mb-4">
+        <div class="card habitacion-card position-relative">
+          <img src="../img/habitaciones/hSuiteFam/2.png" class="card-img-top" alt="Habitación Familiar">
+          <div class="card-body">
+            <h5 class="card-title">Habitación Familiar</h5>
+            <h5 class="card-costo">$1200.00</h5>
+          </div> 
+
+          <div class="overlay text-center text-white px3">
+            <button class="btn btn-light ver-fotos-btn" data-habitacion="familiar">Ver fotos</button>
+            <p class="card-text">Espacio amplio con cama king size, minibar y balcón privado.</p>
+          </div>
+        </div>
+      </div>  
+
+      <!-- Card 4 -->
+      <div class="col-md-4 mb-4">
+        <div class="card habitacion-card position-relative">
+          <img src="../img/habitaciones/hVilla/1.png" class="card-img-top" alt="Villas">
+          <div class="card-body">
+            <h5 class="card-title">Villa</h5>
+            <h5 class="card-costo">$1800.00</h5>
+          </div> 
+          <div class="overlay text-center text-white px3">
+            <button class="btn btn-light ver-fotos-btn" data-habitacion="villa">Ver fotos</button>
+            <p class="card-text">Espacio amplio con cama king size, minibar y balcón privado.</p>
+          </div>
+        </div>
+      </div>  
+
+      <!-- Card 5 -->
+      <div class="col-md-4 mb-4">
+        <div class="card habitacion-card position-relative">
+          <img src="../img/habitaciones/hPresidencial/1.png" class="card-img-top" alt="Suite Presidencial">
+          <div class="card-body">
+            <h5 class="card-title">Suite Presidencial</h5>
+            <h5 class="card-costo">$2500.00</h5>
+          </div> 
+          <div class="overlay text-center text-white px3">
+            <button class="btn btn-light ver-fotos-btn" data-habitacion="presidencial">Ver fotos</button>
+            <p class="card-text">Espacio amplio con cama king size, minibar y balcón privado.</p>
+          </div>
+        </div>
+      </div>  
+
+      
+    </div>
+
+    <div class="modal fade" id="modalHabitacion" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="titulo-modal-habitacion"></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            <div id="galeria-modal" class="mb-3 d-flex flex-wrap gap-2 justify-content-center"></div>
+            <p id="descripcion-modal-habitacion"></p>
+          </div>
+          <div class="modal-footer">
+            <!--<a href="#reservar" class="btn btn-primary">Reservar</a>-->
+            <a href="reservar" class="btn btn-primary" id="btn-modal-reservar">Reservar</a>
+          </div>
+        </div>
+      </div>
+    </div>   
+
+  </section>
+  
+
+  <!--Seccion de servicios-->
+  <section id="servicios" class="seccion servicios">
+    <div class="texto-servicios">
+      <h3>EXTRAS</h3>
+      <h2>SERVICIOS</h2>
+      <p>Nos preocupamos en que tu estancia sea la mejor, con todas 
+        las comodidades dentro del mercado al mejor precio.</p>
+    </div>
+  
+    <!-- NUEVO CONTENEDOR FLEX -->
+    <div class="contenedor-tarjetas">
+      <div class="tarjeta-servicio">
+        <img src="../img/servicios/comida.jpg" alt="Comida">
+        <h3>COMIDA</h3>
+      </div>
+  
+      <div class="tarjeta-servicio">
+        <img src="../img/servicios/seguridad.jpg" alt="Seguridad">
+        <h3>SEGURIDAD</h3>
+      </div>
+  
+      <div class="tarjeta-servicio">
+        <img src="../img/servicios/limpieza.jpg" alt="Limpieza">
+        <h3>LIMPIEZA</h3>
+      </div>
+  
+      <div class="tarjeta-servicio">
+        <img src="../img/servicios/aire.png" alt="Aire">
+        <h3>AIRE ACONDICIONADO</h3>
+      </div>
+    </div>
+  </section>
+
+
+  <!--Amenidades-->
+  <section id="amenidades" class="seccion-amenidades">
+
+    <div class="contenedor-titulo">
+      <p class="subtitulo">NUESTRAS</p>
+      <h2 class="titulo">AMENIDADES</h2>
+    </div>
+  
+    <div class="contenedor-amenidades">
+
+      <div class="tarjeta-amenidad" id="internet">
+        <img src="../img/iconosAmenidades/wifi.png" alt="wifi">
+        <h3>INTERNET</h3>
+        <p>Obtén Wifi gratis con cobertura en todas nuestras habitaciones.</p>
+      </div>
+  
+      <div class="tarjeta-amenidad">
+        <img src="../img/iconosAmenidades/jacuzzi.png" alt="jacuzzi">
+        <h3>JACUZZI</h3>
+        <p>Elige la opción de Jacuzzi para vivir una experiencia fuera de lo cuadrado.</p>
+      </div>
+  
+      <div class="tarjeta-amenidad">
+        <img src="../img/iconosAmenidades/estacionamiento.png" alt="estacionamiento">
+        <h3>ESTACIONAMIENTO</h3>
+        <p>Cada habitación cuenta con su estacionamiento propio para brindar absoluta discreción.</p>
+      </div>
+  
+      <div class="tarjeta-amenidad">
+        <img src="../img/iconosAmenidades/vapor.png" alt="vapor">
+        <h3>VAPOR</h3>
+        <p>Una de las experiencias más especiales de Sqadra ¿te atreves a probarlo?</p>
+      </div>
+  
+      <div class="tarjeta-amenidad">
+        <img src="../img/iconosAmenidades/tv.png" alt="tv">
+        <h3>TV CON CABLE</h3>
+        <p>Disfruta de televisión por cable y tu streaming favorito.</p>
+      </div>
+  
+      <div class="tarjeta-amenidad">
+        <img src="../img/iconosAmenidades/comida.png" alt="comida">
+        <h3>ALIMENTOS</h3>
+        <p>Deliciosos platillos a la carta listos en minutos en tu habitación.</p>
+      </div>
+
+    </div>
+  </section>
+
+
+
+  <!--formulario para reservar-->
+  <section id="reservar">
+    <div class="container py-5">
+      <div class="row justify-content-center g-4">
+  
+        <!-- Información de la habitación -->
+        <div class="col-lg-6">
+          <div class="card shadow rounded">
+            <img id="imagen-habitacion" src="" class="img-fluid rounded" alt="Habitación seleccionada" style="max-height: 300px;">
+            <div class="card-body">
+              <h3 id="nombre-habitacion" class="card-title">Cargando...</h3>
+              <p id="descripcion-habitacion" class="card-text"></p>
+              <h5 id="precio-habitacion" class="text-primary"></h5>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Formulario de reservación -->
+        <div class="col-lg-6">
+          <div class="card shadow rounded">
+            <div class="card-body">
+  
+              <form id="form-reserva" class="needs-validation" novalidate>
+                <h3 class="card-title mb-4 text-center">DATOS DEL CLIENTE</h3>
+
+                <!-- Tipo de habitación -->
+                <div class="mb-3">
+                  <label for="tipo-habitacion" class="form-label">Tipo de habitación</label>
+                  <select class="form-select" id="tipo-habitacion" required>
+                    <option value="" selected disabled>Seleccione una opción</option>
+                    <option value="estandar">Habitación Estándar</option>
+                    <option value="deluxe">Habitación Deluxe</option>
+                    <option value="familiar">Habitación Familiar</option>
+                    <option value="villa">Villa</option>
+                    <option value="presidencial">Suite Presidencial</option>
+                  </select>
+                </div>
+
+                <!--Datos de la reservacion-->
+                <div class="-reservacion-habitacion">
+
+                  <!-- Extras -->
+                  <div class="mb-3">
+                    <label for="usar-extras" class="form-label">¿Deseas agregar servicios extras?</label>
+                    <select id="usar-extras" class="form-select" required>
+                      <option value="no" selected>NO</option>
+                      <option value="si">SI</option>
+                    </select>
+                  </div>
+
+                  <!-- Opciones de extras (ocultas por defecto) -->
+                  <div id="opciones-extras" class="mb-3" style="display: none;">
+                    <label class="form-label">Selecciona los extras:</label><br>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="desayuno" value="desayuno">
+                      <label class="form-check-label" for="desayuno">Desayuno a la habitación ($100 x persona)</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="spa" value="spa">
+                      <label class="form-check-label" for="spa">Spa ($150 x persona)</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="gimnasio" value="gimnasio">
+                      <label class="form-check-label" for="gimnasio">Acceso al gimnasio ($90 x persona)</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="traslado" value="traslado">
+                      <label class="form-check-label" for="traslado">Traslado al aeropuerto ($200 x persona)</label>
+                    </div>
+                  </div>
+
+
+                  <!-- Fecha de entrada -->
+                  <div class="mb-3">
+                    <label for="fecha-entrada" class="form-label">Fecha de entrada</label>
+                    <input type="date" class="form-control" id="fecha-entrada" required>
+                  </div>
+    
+                  <!-- Fecha de salida -->
+                  <div class="mb-3">
+                    <label for="fecha-salida" class="form-label">Fecha de salida</label>
+                    <input type="date" class="form-control" id="fecha-salida" required>
+                  </div>
+
+                  <!-- Número de personas -->
+                  <!-- ¿Son más de 2 personas? -->
+                  <div class="mb-3">
+                    <label for="seleccion-personas-extras" class="form-label">¿Son más de 2 personas?</label>
+                    <select id="seleccion-personas-extras" class="form-select" required>
+                      <option value="no" selected>NO</option>
+                      <option value="si">SI</option>
+                    </select>
+                  </div>
+
+                  <!-- Campo para número de personas extra -->
+                  <div id="campo-personas-extras" class="mb-3" style="display: none;">
+                    <label class="form-label">Número de personas extra: ($200 por persona)</label>
+                    <input type="number" class="form-control" id="input-personas-extras" min="1" max="3">
+                  </div>
+
+
+                </div>
+
+                <div class="datos-cliente">
+                  <div class="mb3">
+                    <label for="nombre" class="form-label">Datos del cliente</label>
+
+                    <!-- Nombre completo -->
+                    <div class="mb-3">
+                      <label for="nombre" class="form-label">Nombre completo</label>
+                      <input type="text" class="form-control" id="nombre" required>
+                    </div>
+
+                    <!-- Correo electrónico -->
+                    <div class="mb-3">
+                      <label for="correo" class="form-label">Correo electrónico</label>
+                      <input type="email" class="form-control" id="correo" required>
+                    </div>
+
+                    <!--Telefono de contacto-->
+                    <div class="mb-3">
+                      <label for="telefono" class="form-label">Telefono</label>
+                      <input type="tel" class="form-control" id="telefono" required>
+                    </div>
+                  </div>
+                </div>             
+                
+                <div sclass="d-grid">
+                  <button type="submit" class="btn btn-primary">Reservar ahora</button>
+                </div>
+
+                
+
+              </form>
+
+              <!-- Modal de confirmación -->
+              <div class="modal fade" id="resumenReservaModal" tabindex="-1" aria-labelledby="resumenReservaLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Resumen de tu reservación</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body" id="resumen-contenido">
+                      <!-- Aquí se llenarán los datos con JS -->
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Editar</button>
+                      <button id="confirmarReservaBtn" type="button" class="btn btn-success">Confirmar y Pagar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+  
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+
+
+
+  <!--Footer-->
+  <footer id="contacto" class="footer">
+    <div class="footer-contenedor">
+      
+      <!-- Columna 1: Acerca del hotel -->
+      <div class="footer-col">
+        <h2>ACERCA DEL HOTEL</h2>
+        <p>Contamos con una ubicación discreta para que nuestros huéspedes disfruten de la privacidad y amenidades de cada habitación.</p>
+        <p><i class="fa-solid fa-phone"></i> <strong>55 2125 5487</strong></p>
+      </div>
+  
+      <!-- Columna 2: Navegación -->
+      <div class="footer-col">
+        <h2>EXPLORA</h2>
+        <ul>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#habitaciones">Habitaciones</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+          <li><a href="#reservaciones">Reservaciones</a></li>
+          <li><a href="#privacidad">Aviso de Privacidad</a></li>
+        </ul>
+      </div>
+  
+      <!-- Columna 3: Dirección y mapa -->
+      <div class="footer-col">
+        <h2>CONTACTO</h2>
+        <p>Calle José María Morelos y Pavón #61, Coacalco, 55700 San Francisco Coacalco, Méx., México</p>
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.132862366168!2d-99.1110962!3d19.4031186!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f0b4fbdc7d1d%3A0xa70e487127a74c7b!2sHotel%20y%20villas%20SQADRA!5e0!3m2!1ses-419!2smx!4v1714344110126!5m2!1ses-419!2smx"
+          width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+  
+    </div>
+  
+    <!-- Pie de página inferior -->
+    <div class="footer-bottom">
+      <p>&copy; 2025 <a href="#">Celestial Dreams</a></p>
+    </div>
+  </footer>
+  
+  
+
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>  
+<!-- Bootstrap 5 con JavaScript incluido -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!--
+  scripts deemails js paraenviar correo electronico  -->
+  <!-- EmailJS Script -->
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script>
+    emailjs.init("i2-43UBDQXOM1-eDe"); // tu clave pública
+  </script>
+
+  <script type="module" src="../js/firebase.js"></script>
+  
+
+  
+
+</body>
+
+
+<script type="module" src="../js/app.js"></script>
+<script type="module" src="../js/reservacion.js"></script>
+<script type="module" src="../js/navbar.js"></script>
+<script type="module" src="../js/indexAdmin.js"></script>
+</html>

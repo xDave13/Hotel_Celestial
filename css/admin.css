@@ -1,0 +1,32 @@
+    body {
+      display: flex;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #343a40;
+      color: white;
+    }
+
+    .sidebar .nav-link {
+      color: #ccc;
+    }
+
+    .sidebar .nav-link:hover,
+    .sidebar .nav-link.active {
+      background-color: #495057;
+      color: white;
+    }
+
+    .content {
+      flex-grow: 1;
+      padding: 2rem;
+      background-color: #f8f9fa;
+    }
+
+    .navbar {
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }

@@ -1,0 +1,72 @@
+/* Contenedor general del formulario */
+#reservar .card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+  }
+  
+  /* Imagen de la habitación */
+  #reservar img#imagen-habitacion {
+    object-fit: cover;
+    height: 300px;
+    width: 100%;
+  }
+  
+  /* Título del formulario */
+  #reservar .card-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-align: center;
+    color: #343a40;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+  
+  /* Inputs y selects */
+  #reservar input,
+  #reservar select {
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 0.95rem;
+  }
+  
+  /* Botón principal */
+  #reservar button[type="submit"] {
+    padding: 12px;
+    font-weight: bold;
+    font-size: 1rem;
+    border-radius: 10px;
+    width: 100%;
+    margin-top: 10px;
+    background-color: #e91e63;
+    border: none;
+    transition: background 0.3s ease;
+  }
+  
+  #reservar button[type="submit"]:hover {
+    background-color: #c2185b;
+    color: white;
+  }
+  
+  /* Extras */
+  #reservar .form-check {
+    margin-bottom: 10px;
+  }
+  
+  #reservar .form-check-label {
+    font-size: 0.95rem;
+  }
+  
+  /* Responsive ajustes en pantallas pequeñas */
+  @media (max-width: 768px) {
+    #reservar .row {
+      flex-direction: column;
+    }
+  
+    #reservar .col-lg-6 {
+      width: 100%;
+    }
+  }
+  
